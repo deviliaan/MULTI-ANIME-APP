@@ -11,8 +11,9 @@ class AdminController extends Controller
     //
     function settings()
     {
+        $version = env('APP_VERSION');
         $settings = Setting::all()->get(0);
         $settings = json_decode(json_encode($settings, FALSE));
-        return Inertia::render('Settings', ['settings' => $settings]);
+        return Inertia::render('Settings', ['settings' => $settings, 'version' => $version]);
     }
 }

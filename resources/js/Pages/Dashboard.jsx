@@ -8,9 +8,9 @@ export default function Dashboard({ auth }) {
             <Head>
                 <title>{`Dashboard - ${auth.user.name}`}</title>
             </Head>
-            <div>
-                <Navbar />
-            </div>
+            <AuthenticatedLayout user={auth.user}>
+                <div>wellcome</div>
+            </AuthenticatedLayout>
         </div>
     );
 }
