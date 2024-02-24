@@ -36,21 +36,23 @@ function HomeRecent({ type, keyword }) {
                         className={
                             page == 1
                                 ? "hidden"
-                                : "px-2 hover:bg-slate-600 hover:font-bold hover:text-white"
+                                : "px-2 text-violet-700 hover:bg-slate-600 hover:font-bold hover:text-white"
                         }
                     >
                         {page - 1}
                     </button>
-                    <button className="border-b-2 border-info">{page}</button>
+                    <button className="border-b-2 border-info text-primary">
+                        {page}
+                    </button>
                     <button
                         onClick={next}
-                        className="px-2 hover:bg-slate-600 hover:font-bold hover:text-white"
+                        className="px-2 text-violet-800 hover:bg-slate-600 hover:font-bold hover:text-white"
                     >
                         {page + 1}
                     </button>
                 </div>
             </div>
-            <div className="mt-2 grid w-full grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-4">
+            <div className="mt-2 grid w-full grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-5 lg:gap-4">
                 {results.length > 0 ? (
                     results.map((anime, index) => {
                         return (

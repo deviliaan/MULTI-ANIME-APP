@@ -29,11 +29,9 @@ function Navbar() {
             <div className="flex h-16 items-center p-4 lg:justify-between">
                 <div className="cursor-pointer">
                     <a href="/">
-                        <FontAwesomeIcon
-                            className="text-primary"
-                            icon={faLaravel}
-                            size="2xl"
-                        />
+                        <h2 className="text-xl font-bold text-primary">
+                            69Anime.xyz
+                        </h2>
                     </a>
                 </div>
                 <div className="hidden w-[30%] justify-around lg:flex">

@@ -42,33 +42,11 @@ function SingleContent() {
                             anime.episodes.map((episode, index) => {
                                 return (
                                     <a href={episode.link}>
-                                        <figure className="group relative w-full overflow-hidden rounded-md">
-                                            <img
-                                                className="rounded-md transition-transform delay-100 duration-300 ease-in-out group-hover:scale-105"
-                                                src={episode.backup}
-                                                alt={episode.backup}
-                                                srcset=""
-                                            />
-                                            <div className="absolute inset-0 left-0 top-0 z-50 p-2">
-                                                <span className="rounded-3xl bg-primary px-3 py-2 text-sm font-bold text-secondary group-hover:animate-pulse">
-                                                    {anime.episodes.length -
-                                                        index}
-                                                </span>
-                                            </div>
-                                            <div className="duration-250 absolute inset-0 left-0 top-0 grid place-items-center bg-slate-400 opacity-0 transition-opacity delay-75 ease-in-out group-hover:opacity-65">
-                                                <FontAwesomeIcon
-                                                    icon={faPlayCircle}
-                                                    size="2xl"
-                                                    className="text-primary"
-                                                />
-                                            </div>
-                                        </figure>
-                                        <div className="truncate">
-                                            <span>
+                                        <div className="group bg-primary px-2 py-2 shadow-md transition-colors delay-75 duration-200 ease-in-out hover:bg-slate-400">
+                                            <span className="text-secondary transition-colors delay-75 duration-200 ease-in-out group-hover:text-primary">
                                                 Episode{" "}
                                                 {anime.episodes.length - index}
                                             </span>
-                                            <span> {episode.type}</span>
                                         </div>
                                     </a>
                                 );

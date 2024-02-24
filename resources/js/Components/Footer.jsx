@@ -19,9 +19,9 @@ export const Footer = () => {
                         className="h-8 w-8"
                     />
                     <p>
-                        ANIME Industries Ltd.
+                        69Anime.xyz
                         <br />
-                        Providing reliable ANIME since 1992
+                        Providing reliable ANIME FREE
                     </p>
                 </aside>
                 <nav>

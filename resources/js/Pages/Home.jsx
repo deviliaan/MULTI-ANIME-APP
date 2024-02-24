@@ -6,17 +6,21 @@ import { Footer } from "@/Components/Footer";
 function Home() {
     let { theme } = usePage().props;
     return (
-        <div data-theme={theme} className="w-full">
+        <div data-theme={theme} className="flex w-full justify-center">
             <Head>
                 <title>Wellcome To Anime Website || Watch Free Animes</title>
             </Head>
-            <div className="w-full">
-                <Navbar />
-                <div>
+            <div className="container grid grid-cols-4">
+                <div className="col-span-4">
+                    <Navbar />
+                </div>
+                <div className="col-span-4 lg:col-span-3">
                     <HomeRecent type="recent" />
                 </div>
-                <div>{/* Home Popular */}</div>
-                <Footer />
+                <div className="col-span-1">popular</div>
+                <div className="col-span-4">
+                    <Footer />
+                </div>
             </div>
         </div>
     );

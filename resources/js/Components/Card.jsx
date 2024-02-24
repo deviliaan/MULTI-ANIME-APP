@@ -6,9 +6,9 @@ function Card({ anime }) {
     return (
         <a
             href={`${anime.link}`}
-            className="relative h-full w-full min-w-[185px] max-w-[185px] lg:max-w-full"
+            className="relative h-full w-full max-w-[185px] lg:max-w-full"
         >
-            <figure className="group relative h-60 w-full overflow-hidden md:grid-cols-5 lg:h-80">
+            <figure className="group relative h-60 w-full overflow-hidden md:grid-cols-5 lg:h-60">
                 <img
                     src={anime?.image}
                     loading="lazy"
