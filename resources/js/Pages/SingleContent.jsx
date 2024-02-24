@@ -1,3 +1,4 @@
+import { Footer } from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,11 +17,11 @@ function SingleContent() {
                 <Navbar />
             </div>
             <div className="p-2">
-                <div className="ml-8 p-2 text-lg font-bold text-primary">
+                <div className="p-2 text-lg font-bold text-primary">
                     {anime?.title}
                 </div>
                 <div className="flex w-full justify-center">
-                    <div className="h-full w-[90%] overflow-hidden rounded-md shadow-lg lg:w-[60%]">
+                    <div className="h-auto min-h-[260px] w-[90%] overflow-hidden rounded-md shadow-lg lg:w-[60%]">
                         <iframe
                             className="m-0 aspect-video h-full w-full border-none p-0"
                             src={anime?.src}
@@ -36,7 +37,7 @@ function SingleContent() {
                             Episodes
                         </span>
                     </div>
-                    <div className="grid w-full grid-cols-4 gap-2 p-4 lg:grid-cols-6">
+                    <div className="grid w-full grid-cols-3 gap-2 p-4 md:grid-cols-4 lg:grid-cols-6">
                         {anime.episodes ? (
                             anime.episodes.map((episode, index) => {
                                 return (
@@ -48,6 +49,12 @@ function SingleContent() {
                                                 alt={episode.backup}
                                                 srcset=""
                                             />
+                                            <div className="absolute inset-0 left-0 top-0 z-50 p-2">
+                                                <span className="rounded-3xl bg-primary px-3 py-2 text-sm font-bold text-secondary group-hover:animate-pulse">
+                                                    {anime.episodes.length -
+                                                        index}
+                                                </span>
+                                            </div>
                                             <div className="duration-250 absolute inset-0 left-0 top-0 grid place-items-center bg-slate-400 opacity-0 transition-opacity delay-75 ease-in-out group-hover:opacity-65">
                                                 <FontAwesomeIcon
                                                     icon={faPlayCircle}
@@ -71,6 +78,9 @@ function SingleContent() {
                         )}
                     </div>
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     );

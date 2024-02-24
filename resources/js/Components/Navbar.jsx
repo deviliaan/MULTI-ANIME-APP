@@ -28,11 +28,13 @@ function Navbar() {
         <div className="w-full">
             <div className="flex h-16 items-center p-4 lg:justify-between">
                 <div className="cursor-pointer">
-                    <FontAwesomeIcon
-                        className="text-primary"
-                        icon={faLaravel}
-                        size="2xl"
-                    />
+                    <a href="/">
+                        <FontAwesomeIcon
+                            className="text-primary"
+                            icon={faLaravel}
+                            size="2xl"
+                        />
+                    </a>
                 </div>
                 <div className="hidden w-[30%] justify-around lg:flex">
                     <a

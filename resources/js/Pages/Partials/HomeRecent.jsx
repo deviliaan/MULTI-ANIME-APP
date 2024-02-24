@@ -50,7 +50,7 @@ function HomeRecent({ type, keyword }) {
                     </button>
                 </div>
             </div>
-            <div className="mt-2 grid w-full grid-cols-3 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-4">
+            <div className="mt-2 grid w-full grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-6 lg:gap-4">
                 {results.length > 0 ? (
                     results.map((anime, index) => {
                         return (
