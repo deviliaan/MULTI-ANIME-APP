@@ -1,6 +1,6 @@
 ### ROUTES
 
-# /search
+<!-- # /search -->
 
 <!-- # /dubbed -->
 
@@ -12,4 +12,4 @@
 
 # /movies
 
-# /search
+<!-- # /search -->
