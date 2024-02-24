@@ -1,0 +1,11 @@
+.home {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+
+.app {
+    width: 100%;
+    background-color: skyblue;
+}
