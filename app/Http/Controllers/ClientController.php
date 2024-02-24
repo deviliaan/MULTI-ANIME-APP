@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 class ClientController extends Controller
 {
+    public $settings;
     //
     public function index()
     {
+        $this->settings = json_decode(json_encode(Setting::all()->get(0), FALSE));
         $theme = env('APP_THEME');
-        return Inertia::render('Home', ['theme' => $theme]);
+        return Inertia::render('Home', ['settings' => $this->settings]);
     }
     public function content($id)
     {

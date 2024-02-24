@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Setting;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,9 +24,16 @@ Route::get('/', [ClientController::class, 'index']);
 Route::get('/videos/{id}', [ClientController::class, 'content']);
 Route::get('/dubbed', [ClientController::class, 'dubbed']);
 Route::get('/search/{keyword}', [ClientController::class, 'search']);
+Route::get('/test', function () {
+    dd(config('website.status'));
+});
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/settings', [AdminController::class, 'settings']);
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
