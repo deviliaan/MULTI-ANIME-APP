@@ -11,7 +11,8 @@ class ClientController extends Controller
     //
     public function index()
     {
-        return Inertia::render('Home');
+        $theme = env('APP_THEME');
+        return Inertia::render('Home', ['theme' => $theme]);
     }
     public function content($id)
     {
