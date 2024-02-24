@@ -8,6 +8,7 @@ function Card({ anime }) {
             <figure className="group relative h-60 w-full overflow-hidden md:grid-cols-5 lg:h-80">
                 <img
                     src={anime?.image}
+                    loading="lazy"
                     className="delay-600 h-full w-full object-cover transition ease-in-out group-hover:scale-110"
                     alt={anime?.title}
                 />
