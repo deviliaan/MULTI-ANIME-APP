@@ -3,19 +3,26 @@ import Navbar from "@/Components/Navbar";
 import { Footer } from "@/Components/Footer";
 import { Head } from "@inertiajs/react";
 import HomeRecent from "./Partials/HomeRecent";
+import HomeRight from "./Partials/HomeRight";
 function Dubbed() {
     return (
-        <div data-theme="dim" className="w-full">
+        <div className="flex w-full justify-center">
             <Head>
                 <title>Wellcome To Anime Website || Watch Free Animes</title>
             </Head>
-            <div className="w-full">
-                <Navbar />
-                <div>
+            <div className="grid-rows-auto container grid grid-cols-4">
+                <div className="col-span-4">
+                    <Navbar />
+                </div>
+                <div className="col-span-4 lg:col-span-3">
                     <HomeRecent type="dubbed" />
                 </div>
-                <div>{/* Home Popular */}</div>
-                <Footer />
+                <div className="col-span-4 w-full lg:col-span-1">
+                    <HomeRight />
+                </div>
+                <div className="col-span-4">
+                    <Footer />
+                </div>
             </div>
         </div>
     );
