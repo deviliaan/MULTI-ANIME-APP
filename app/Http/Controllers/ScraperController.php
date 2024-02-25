@@ -104,4 +104,79 @@ class ScraperController extends Controller
             return response()->json($results);
         }
     }
+    public function movies($page)
+    {
+        $api_end = env('API_END');
+        $client = new HttpBrowser();
+        $crawler = $client->request("GET", "$api_end/movies?page=$page");
+        $results = $crawler->filter('.listing > li')->each(function ($node) {
+            $title = $node->children('a > .name')->text();
+            $image = $node->children('a > .img > .picture > img')->attr('src');
+            $release = $node->children('a > .meta > .date')->text();
+            $link = $node->children('a')->attr('href');
+            $anime = [
+                'title' => explode(' Episode ', $title)[0],
+                'image' => $image,
+                'release' => $release,
+                'link' => $link,
+                'episode' => intval(explode(" Episode ", $title)[1])
+            ];
+            return $anime;
+        });
+        if (count($results) < 1) {
+            return response()->json(['status' => 'notfound']);
+        } else {
+            return response()->json($results);
+        }
+    }
+    public function popular($page)
+    {
+        $api_end = env('API_END');
+        $client = new HttpBrowser();
+        $crawler = $client->request("GET", "$api_end/popular?page=$page");
+        $results = $crawler->filter('.listing > li')->each(function ($node) {
+            $title = $node->children('a > .name')->text();
+            $image = $node->children('a > .img > .picture > img')->attr('src');
+            $release = $node->children('a > .meta > .date')->text();
+            $link = $node->children('a')->attr('href');
+            $anime = [
+                'title' => explode(' Episode ', $title)[0],
+                'image' => $image,
+                'release' => $release,
+                'link' => $link,
+                'episode' => intval(explode(" Episode ", $title)[1])
+            ];
+            return $anime;
+        });
+        if (count($results) < 1) {
+            return response()->json(['status' => 'notfound']);
+        } else {
+            return response()->json($results);
+        }
+    }
+    public function newSeason($page)
+    {
+        $api_end = env('API_END');
+        $client = new HttpBrowser();
+        $crawler = $client->request("GET", "$api_end/new-season?page=$page");
+        $results = $crawler->filter('.listing > li')->each(function ($node) {
+            $title = $node->children('a > .name')->text();
+            $image = $node->children('a > .img > .picture > img')->attr('src');
+            $release = $node->children('a > .meta > .date')->text();
+            $link = $node->children('a')->attr('href');
+            $anime = [
+                'title' => explode(' Episode ', $title)[0],
+                'image' => $image,
+                'release' => $release,
+                'link' => $link,
+                'episode' => intval(explode(" Episode ", $title)[1])
+            ];
+            return $anime;
+        });
+        if (count($results) < 1) {
+            return response()->json(['status' => 'notfound']);
+        } else {
+            return response()->json($results);
+        }
+    }
 }

@@ -25,7 +25,7 @@ function HomeRecent({ type, keyword }) {
         else setPage(page - 1);
     };
     return (
-        <div className="grid-rows-auto grid w-full p-4">
+        <div className="grid-rows-auto mb-2 mt-4 grid w-full border border-primary">
             <div className="flex w-full justify-between bg-gradient-to-r from-primary via-purple-300 to-secondary p-2">
                 <span className="font-bold capitalize text-secondary">
                     {type}
@@ -52,7 +52,7 @@ function HomeRecent({ type, keyword }) {
                     </button>
                 </div>
             </div>
-            <div className="mt-2 grid w-full grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-5 lg:gap-4">
+            <div className="mt-2 grid w-full grid-cols-2 place-items-center gap-2 p-2 md:grid-cols-4 lg:grid-cols-5 lg:gap-4">
                 {results.length > 0 ? (
                     results.map((anime, index) => {
                         return (

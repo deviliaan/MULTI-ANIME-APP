@@ -24,6 +24,7 @@ Route::get('/', [ClientController::class, 'index']);
 Route::get('/videos/{id}', [ClientController::class, 'content']);
 Route::get('/dubbed', [ClientController::class, 'dubbed']);
 Route::get('/search/{keyword}', [ClientController::class, 'search']);
+Route::get('/movies', [ClientController::class, 'movies']);
 Route::get('/test', function () {
     dd(config('website.status'));
 });

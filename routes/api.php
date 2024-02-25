@@ -19,3 +19,6 @@ Route::get('/recent/{page}', [ScraperController::class, 'index']);
 Route::get('/videos/{id}', [ScraperController::class, 'content']);
 Route::get('/dubbed/{page}', [ScraperController::class, 'dubbed']);
 Route::get('/search/{keyword}/{page}', [ScraperController::class, 'search']);
+Route::get('/movies/{page}', [ScraperController::class, 'movies']);
+Route::get('/popular/{page}', [ScraperController::class, 'popular']);
+Route::get('/new-season/{page}', [ScraperController::class, 'newSeason']);

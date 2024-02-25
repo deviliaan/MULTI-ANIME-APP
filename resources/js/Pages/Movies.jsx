@@ -1,14 +1,12 @@
 import React from "react";
+import { Head } from "@inertiajs/react";
 import Navbar from "@/Components/Navbar";
 import HomeRecent from "./Partials/HomeRecent";
-import { Head, usePage } from "@inertiajs/react";
-import { Footer } from "@/Components/Footer";
 import HomeRight from "./Partials/HomeRight";
-
-function Home() {
-    let { theme } = usePage().props;
+import { Footer } from "@/Components/Footer";
+function Movies() {
     return (
-        <div data-theme={theme} className="flex w-full justify-center">
+        <div className="flex w-full justify-center">
             <Head>
                 <title>Wellcome To Anime Website || Watch Free Animes</title>
             </Head>
@@ -17,7 +15,7 @@ function Home() {
                     <Navbar />
                 </div>
                 <div className="col-span-4 lg:col-span-3">
-                    <HomeRecent type="recent" />
+                    <HomeRecent type="movies" />
                 </div>
                 <div className="col-span-4 w-full lg:col-span-1">
                     <HomeRight />
@@ -30,4 +28,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Movies;

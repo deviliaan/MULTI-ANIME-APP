@@ -32,4 +32,8 @@ class ClientController extends Controller
     {
         return Inertia::render('Search', ['keyword' => $keyword]);
     }
+    public function movies()
+    {
+        return Inertia::render('Movies');
+    }
 }
